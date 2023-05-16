@@ -68,14 +68,6 @@ void insert(str s){
     x1=v[x1][x];
   }
 }
-void dfs(ll x,ll y){
-  FOR(i,0,25){
-    if (v[y][i]) {
-      dfs(y,v[y][i]);
-      s+=2;
-    }
-  }
-}
 void solve(){
   ll n,j=0,max1=0;
   cin>>n;
@@ -83,17 +75,11 @@ void solve(){
   FOR(i,1,n){
     str s;
     cin>>s;
-    // cout<<s<<"\n";
     ll x=s.size();
     max1=max(max1,x);
     insert(s);
   }
-  FOR(i,0,25)
-    if (v[1][i]) {
-      dfs(i,v[1][i]);
-      s+=2;
-    }
-  cout<<s+n-max1;
+  cout<<(d-1)*2+n-max1;
 }
 int main(){
   IOS;
